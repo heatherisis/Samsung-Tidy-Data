@@ -1,15 +1,18 @@
 Getting and Cleaning Samsung Data
 =================
 
+# Coursera Course Project
 
-1. We assume that the zip file from the following URL has been downloard and extracted to a local directory. 
-=================
+We assume that the zip file from the following URL has been downloard and extracted to a local directory. 
+
 #downloads project file and set downloaded "UCI HAR Dataset" file as working directory
-=================
 download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
               ,destfile="./samsungData.zip",method="curl")
 
 setwd("/Users/heatherisis/Desktop/Getting and Cleaning Data/UCI HAR Dataset")
+
+
+
 
 ###clean up large data files
 

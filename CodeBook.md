@@ -1,5 +1,7 @@
-datasciencecoursera - getting and cleaning data
+Getting and Cleaning Samsung Data Code Book
 ===================
+
+Create a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
 
 ## This is a secondary heading
 ### This is a tertiary heading
@@ -9,8 +11,7 @@ datasciencecoursera - getting and cleaning data
 * third item in list
 
 
-## Provide link to a Github repository with your script for performing the analysis
 
-## Create a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
 
-## You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.  
+
+

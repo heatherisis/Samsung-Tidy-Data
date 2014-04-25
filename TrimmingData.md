@@ -1,3 +1,6 @@
+## These instructions can only be followed after those from "OrganizingData.md" and "CompilingData.md" have been successfully completed
+##Now that we have data set with all subject/activity and variable names all in one file, it is time to determine which variables can be eliminated, as some of the 79 variables can be considered derivations of the original measurements
+
 ###Of 79 selected variables, those with meanFreq calculations omitted, as derived from original measurements
 tidyData <- subset(tidyData, select = -c(49:51,58:60,67:69,72,75,78,81))
 ###eliminate non-measurement vars, including jerk signals and magnitude, as derived from original measurement mean/std

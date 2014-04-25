@@ -244,3 +244,26 @@ for (i in 10001:10299)
   myList <- rbind(myList, complete)
   write.csv(myList, "tidySamsungData10299.csv")  
 }
+
+###Reads new files of 1000 observations each into R
+myList1000 <- read.csv("tidySamsungData1000.csv")
+myList2000 <- read.csv("tidySamsungData2000.csv")
+myList3000 <- read.csv("tidySamsungData3000.csv")
+myList4000 <- read.csv("tidySamsungData4000.csv")
+myList5000 <- read.csv("tidySamsungData5000.csv")
+myList6000 <- read.csv("tidySamsungData6000.csv")
+myList7000 <- read.csv("tidySamsungData7000.csv")
+myList8000 <- read.csv("tidySamsungData8000.csv")
+myList9000 <- read.csv("tidySamsungData9000.csv")
+myList10000 <- read.csv("tidySamsungData10000.csv")
+myList10299 <- read.csv("tidySamsungData10299.csv")
+
+###then binds rows into complete list of 10299 observations with 79 variables
+totalList <- rbind(myList1000, myList2000, myList3000, myList4000, myList5000,
+                   myList6000, myList7000, myList8000, myList9000, myList10000,
+                   myList10299)
+
+###Writes compiled and cleaner data set, not yet tidy, reads data table back into R
+write.csv(totalList, "CompiledSamsungData.csv")
+totalData <- read.csv("CompiledSamsungData.csv")
+

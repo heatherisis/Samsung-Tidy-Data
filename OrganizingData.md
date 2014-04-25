@@ -263,7 +263,7 @@ totalList <- rbind(myList1000, myList2000, myList3000, myList4000, myList5000,
                    myList6000, myList7000, myList8000, myList9000, myList10000,
                    myList10299)
 
-###Writes compiled and cleaner data set, not yet tidy, reads data table back into R
+###Writes compiled and cleaner data set, not yet tidy
 write.csv(totalList, "CompiledSamsungData.csv")
-totalData <- read.csv("CompiledSamsungData.csv")
+
 

@@ -1,4 +1,8 @@
-## Now that we have cleaner data set all in one file
+## These instructions can only be followed after those from "Organizing Data" have been successfully completed
+##Now that we have cleaner data set all in one file
+
+###Reads compiled data set from "Organizing Data" markdown file into R
+totalData <- read.csv("CompiledSamsungData.csv")
 
 ###Reads complete list of 2947 subject IDs and activity combos in test set
 testSubject <- readLines("./test/subject_test.txt")

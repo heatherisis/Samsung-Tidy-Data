@@ -1,9 +1,9 @@
-####This OrganizingData markdown file is intended to be the first in a series of four manuscripts describing the process for data cleanup. 
+####This 1OrganizingData markdown file is intended to be the first in a series of four manuscripts describing the process for data cleanup. 
 
-* 1. OrganizingData
-* 2. CompilingData
-* 3. TrimmingData
-* 4. ReshapingData
+* 1. 1OrganizingData
+* 2. 2CompilingData
+* 3. 3TrimmingData
+* 4. 4ReshapingData
 
 
 ####We assume that the zip file from the following URL has been downloaded and extracted to a local directory. Downloads project file and set downloaded "UCI HAR Dataset" file as working directory

@@ -27,10 +27,9 @@ meanVector <- grep("mean()", features)
 stdVector <- grep("std()", features)
 MeanSTD <- sort(c(meanVector, stdVector))
 
-####When running loop of all 10299 observations, computer could not process all at once, so divided into groups of 1000 observations
+####When running loop of all 10299 observations, computer could not process all at once, so divided into groups of 1000 observations. Within each loop, outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes .csv file for 79 variables. 
 
-####first 1000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####First 1000 observations only:  
 
 myList <- list()
 
@@ -49,8 +48,7 @@ for (i in 1:1000)
   write.csv(myList, "tidySamsungData1000.csv")  
 }
 
-####1001-2000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####1001-2000 observations only:  
 
 myList <- list()
 
@@ -69,8 +67,7 @@ for (i in 1001:2000)
   write.csv(myList, "tidySamsungData2000.csv")
 }
 
-####2001-3000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####2001-3000 observations only: 
 
 myList <- list()
 
@@ -89,8 +86,7 @@ for (i in 2001:3000)
   write.csv(myList, "tidySamsungData3000.csv")  
 }
 
-####3001-4000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####3001-4000 observations only: 
 
 myList <- list()
 
@@ -109,8 +105,7 @@ for (i in 3001:4000)
   write.csv(myList, "tidySamsungData4000.csv")  
 }
 
-####4001-5000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####4001-5000 observations only: 
 
 myList <- list()
 
@@ -129,8 +124,7 @@ for (i in 4001:5000)
   write.csv(myList, "tidySamsungData5000.csv")  
 }
 
-####5001-6000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####5001-6000 observations only: 
 
 myList <- list()
 
@@ -149,8 +143,7 @@ for (i in 5001:6000)
   write.csv(myList, "tidySamsungData6000.csv")  
 }
 
-####6001-7000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####6001-7000 observations only: 
 
 myList <- list()
 
@@ -169,9 +162,7 @@ for (i in 6001:7000)
   write.csv(myList, "tidySamsungData7000.csv")
 }
 
-####7001-8000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
-
+####7001-8000 observations only: 
 myList <- list()
 
 for (i in 7001:8000)
@@ -189,8 +180,7 @@ for (i in 7001:8000)
   write.csv(myList, "tidySamsungData8000.csv")
 }
 
-####8001-9000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####8001-9000 observations only: 
 
 myList <- list()
 
@@ -209,8 +199,7 @@ for (i in 8001:9000)
   write.csv(myList, "tidySamsungData9000.csv")  
 }
 
-####9001-10000 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####9001-10000 observations only: 
 
 myList <- list()
 
@@ -230,8 +219,7 @@ for (i in 9001:10000)
   write.csv(myList, "tidySamsungData10000.csv")
 }
 
-####10001-10299 observations only
-####Outer loop finds all variables for particular subject in data set, separates list of variables into parts, converts to vector, and removes empty elements in vector leaving 561 variables. Inner loop selects 79 mean/std variables from each complete list of variables. With shortened list, writes csv for 79 vars 
+####10001-10299 observations only: 
 
 myList <- list()
 

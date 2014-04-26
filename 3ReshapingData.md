@@ -1,9 +1,9 @@
 ####This 3ReshapingData markdown file is intended to be the third in a series of four manuscripts describing the process for data cleanup. These instructions can only be followed after those from 1OrganizingData and 2CompilingData have been successfully completed
 
-* 1. OrganizingData
-* 2. CompilingData
-* 3. TrimmingData
-* 4. ReshapingData
+* 1. 1OrganizingData
+* 2. 2CompilingData
+* 3. 3TrimmingData
+* 4. 4ReshapingData
  
 ####Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 

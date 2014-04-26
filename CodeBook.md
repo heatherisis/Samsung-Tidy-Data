@@ -1,24 +1,29 @@
 Getting and Cleaning Samsung Data Code Book
 ===================
 
-Create a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
 
-## This is a secondary heading
-### This is a tertiary heading
-
-* first item in list
-* second item in list
-* third item in list
-* 
+###This is a code book that describes the variables, the data, and any transformations or work that I performed to clean up the data
 
 
-#Of 79 selected variables, those with meanFreq calculations omitted, as derived from original measurements
-tidyData <- subset(tidyData, select = -c(49:51,58:60,67:69,72,75,78,81))
-#eliminate non-measurement vars, including jerk signals and magnitude, as derived from original 
-#measurement mean/std
-tidyData <- subset(tidyData, select = -c(15:20,27:42,49:54,61:68))
+##Introduction
 
-"1 tBodyAcc-mean()-X"    
+Smart phones are advancing daily. The Samsung Galaxy S-III is a phone that has built-in sensors, including a compass, gyroscope, accelerometer, and barometer [1]. The information collected from these sensors purportedly serves to alert the phone of the user’s state of action, allowing such features as the light staying on, automatic calls, and vibrating to alert you of calls when the phone is simply held upright [2]. Graduate students at The University of California at Irvine (UCI) created the Machine Learning Repository (MLR) in 1987 to house databases, domain theories, and data generators to be used by students, educators, and researchers as a primary source of machine learning data sets [3]. UCI’s “Human Activity Recognition Using Smartphones Data Set” tracked the activity of 30 volunteers between the ages of 19 and 48 who performed a variety of activities with a Samsung Galaxy X III phone tied at their waist [4]. The six activities performed in the collection included laying, sitting, standing, walking on flat ground, walking down stairs, and walking up stairs [4]. The phone’s internal accelerometer and gyroscope measured a variety of variables, upon which a set of calculations was performed to obtain five-hundred and sixty-one numeric values for each person performing each activity [4]. 
+
+##Data Collection
+
+For analysis, I used the data downloaded from UCI’s website [4], which was added to the repository on December 10, 2012. The data were downloaded from the cited source [10] using the R programming language [11]. The downloaded data consist of a sample of 10299 observations of one of thirty participants performing one of the six actions [10]. The thirty participants included in the data set were randomly divided into a training set and a test set [4]. 
+
+The training set included twenty-one subjects.
+[1]  1  3  5  6  7  8 11 14 15 16 17 19 21 22 23 25 26 27 28 29 30
+
+The test set included nine subjects.
+[1]  2  4  9 10 12 13 18 20 24
+
+An accelerometer and a gyroscope were used to collect the 561 one values for each participant performing each activity (10299 combinations). With both devices, three axial linear acceleration and three axial angular velocity measures were captured at a constant rate (50Hz) and with a noise filter [5]. The accelerometer measures collected were divided into body and gravity acceleration signals [5]. All measures were collected along an X, Y, and Z axis, the X-axis along a horizontal side-to-side plane, the Y-axis along an up-and-down vertical plane, and the Z-axis along a horizontal forward-backward plane [6]. The body acceleration measure is considered proper acceleration, or the speed increase relative to a free fall [7] while the gravity acceleration measure was collected with a low frequency filter (cutoff 0.3Hz) [5]. The data taken from the gyroscope measure orientation based on principles of angular momentum [8]. 
+
+Of the 561 variables, only 79 were included in the original cleaning up the data set. The values were selected based on those containing "mean" or "std" (standard deviation) in the title. Upon later inspection, those with mean frequency, jerk signal, and magnitude calculations were omitted, as they were determined to be derived from original measurements, leaving 30 variables in the data set to be tidied.
+
+ "1 tBodyAcc-mean()-X"    
  "2 tBodyAcc-mean()-Y"     "3 tBodyAcc-mean()-Z"     "4 tBodyAcc-std()-X"     
  "5 tBodyAcc-std()-Y"      "6 tBodyAcc-std()-Z"      "41 tGravityAcc-mean()-X"
  "42 tGravityAcc-mean()-Y" "43 tGravityAcc-mean()-Z" "44 tGravityAcc-std()-X" 
@@ -28,7 +33,20 @@ tidyData <- subset(tidyData, select = -c(15:20,27:42,49:54,61:68))
  "267 fBodyAcc-mean()-Y"   "268 fBodyAcc-mean()-Z"   "269 fBodyAcc-std()-X"   
  "270 fBodyAcc-std()-Y"    "271 fBodyAcc-std()-Z"    "424 fBodyGyro-mean()-X" 
  "425 fBodyGyro-mean()-Y"  "426 fBodyGyro-mean()-Z"  "427 fBodyGyro-std()-X"  
- "428 fBodyGyro-std()-Y"   "429 fBodyGyro-std()-Z"  
+ "428 fBodyGyro-std()-Y"   "429 fBodyGyro-std()-Z" 
+
+tidyData <- subset(tidyData, select = -c(49:51,58:60,67:69,72,75,78,81))
+
+#eliminate non-measurement vars, including  as derived from original 
+#measurement mean/std
+tidyData <- subset(tidyData, select = -c(15:20,27:42,49:54,61:68))
+
+Linear body acceleration and angular velocity over time were used to calculate a “jerk” magnitude (the rate of change of acceleration [9]).  
+
+
+#Of 79 selected variables, 
+
+ 
 
 
 #Rename all column names with meaningul titles without code
@@ -70,136 +88,33 @@ colnames(tidyData)[32] <- "Frequency Body Gyroscope Z Standard Deviation"
 
 
 
-Feature Selection 
-=================
+###Reproducibility
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
-
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
-
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
-
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
-
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-
-The set of variables that were estimated from these signals are: 
-
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
-
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
-
-The complete list of variables of each feature vector is available in 'features.txt'
+All analyses performed in this manuscript are reproduced in an R markdown file [12]. To reproduce exactly what was performed in this data analysis, the same data set that was published in December 2012 must be used [4].
 
 
 
+1. Samsung Galaxy S X III “Specifications” Page. URL: http://www.samsung.com/global/galaxys3/specifications.html. Accessed 12/6/2013.
 
-==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
-==================================================================
-Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
-Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Universit‡ degli Studi di Genova.
-Via Opera Pia 11A, I-16145, Genoa, Italy.
-activityrecognition@smartlab.ws
-www.smartlab.ws
-==================================================================
+2. Samsung Galaxy S X III “Features” Page. URL:
+http://www.samsung.com/global/galaxys3/smartstay.html. Accessed 4/14/2014.
 
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+3. UCI Machine Learning Repository “About” Page. URL: http://archive.ics.uci.edu/ml/about.html/. Accessed 4/14/2014.
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+4. UCI Machine Learning Repository “Human Activity Recognition Using Smartphones Data Set” Page. URL: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. Accessed 4/14/2014.
 
-For each record it is provided:
-======================================
+5. UCI HAR Dataset “Feature Selection” text in “features_info.txt” File. URL: http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip.
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+6. Stack Overflow “How to Use Gyro Z Axis on the IPhone” http://stackoverflow.com/questions/7254088/how-to-use-gyro-z-axis-on-the-iphone. Accessed 12/7/13.
 
-The dataset includes the following files:
-=========================================
+7. Wikipedia “Accelerometer” Page. URL: http://en.wikipedia.org/wiki/Accelerometer. Accessed 12/6/2013.
 
-- 'README.txt'
+8. Wikipedia “Gyroscope” Page. URL: http://en.wikipedia.org/wiki/Gyroscope. Accessed 12/6/2013.
 
-- 'features_info.txt': Shows information about the variables used on the feature vector.
+9. Wikipedia “Jerk (physics)” Page. URL: http://en.wikipedia.org/wiki/Jerk_(physics). Accessed 12/6/2013.
 
-- 'features.txt': List of all features.
+10. Anguita, D., Ghio, A., Oneto, L., Parra, X., and Reyes-Ortiz, J.L. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012. Samsung data downloaded from page. URL: https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda. Accessed 12/1/13.
 
-- 'activity_labels.txt': Links the class labels with their activity name.
+11. R Core Team (2012). “R: A language and environment for statistical computing.” URL: http://www.R-project.org.
 
-- 'train/X_train.txt': Training set.
-
-- 'train/y_train.txt': Training labels.
-
-- 'test/X_test.txt': Test set.
-
-- 'test/y_test.txt': Test labels.
-
-The following files are available for the train and test data. Their descriptions are equivalent. 
-
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
-
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
-
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
-
-For more information about this dataset contact: activityrecognition@smartlab.ws
-
-License:
-========
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
-
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-
-This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
-
-Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+12. R Markdown Page. URL: http://www.rstudio.com/ide/docs/authoring/using_markdown. Accessed 4/23/14.

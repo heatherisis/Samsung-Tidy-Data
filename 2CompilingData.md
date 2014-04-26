@@ -1,9 +1,9 @@
 ####This 2CompilingData markdown file is intended to be the second in a series of four manuscripts describing the process for data cleanup. These instructions can only be followed after those from 1OrganizingData have been successfully completed
 
-* 1. OrganizingData
-* 2. CompilingData
-* 3. TrimmingData
-* 4. ReshapingData
+* 1. 1OrganizingData
+* 2. 2CompilingData
+* 3. 3TrimmingData
+* 4. 4ReshapingData
 
 ####Now that we have cleaner data set all in one file, reads compiled data set from "Organizing Data" markdown file into R
 * totalData <- read.csv("CompiledSamsungData.csv")

@@ -42,11 +42,11 @@ All of the coded column names were renamed with meaningul titles without code.
 * "Frequency Body Gyroscope X/Y/Z Mean"
   "Frequency Body Gyroscope X/Y/Z Standard Deviation"
 
-###Reproducibility
+##Reproducibility
 
 All analyses performed in this manuscript are reproduced in an R markdown file [12]. To reproduce exactly what was performed in this data analysis, the same data set that was published in December 2012 must be used [4].
 
-###References
+##References
 
 1. Samsung Galaxy S X III “Specifications” Page. URL: http://www.samsung.com/global/galaxys3/specifications.html. Accessed 12/6/2013.
 

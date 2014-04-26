@@ -23,17 +23,11 @@ An accelerometer and a gyroscope were used to collect the 561 one values for eac
 
 Of the 561 variables, only 79 were included in the cleaning up the data set. The values were initially selected based on those containing "mean" or "std" (standard deviation) in the title. Upon later inspection, those with mean frequency, jerk signal, and magnitude calculations were omitted, as they were determined to be derived from original measurements, leaving 30 variables in the data set to be tidied. 
 
- "1 tBodyAcc-mean()-X"     "2 tBodyAcc-mean()-Y"     "3 tBodyAcc-mean()-Z"     
- "4 tBodyAcc-std()-X"      "5 tBodyAcc-std()-Y"      "6 tBodyAcc-std()-Z"      
- "41 tGravityAcc-mean()-X" "42 tGravityAcc-mean()-Y" "43 tGravityAcc-mean()-Z"
- "44 tGravityAcc-std()-X"  "45 tGravityAcc-std()-Y"  "46 tGravityAcc-std()-Z"  
- "121 tBodyGyro-mean()-X"  "122 tBodyGyro-mean()-Y"  "123 tBodyGyro-mean()-Z"  
- "124 tBodyGyro-std()-X"   "125 tBodyGyro-std()-Y"   "126 tBodyGyro-std()-Z"   
- "266 fBodyAcc-mean()-X"   "267 fBodyAcc-mean()-Y"   "268 fBodyAcc-mean()-Z"   
- "269 fBodyAcc-std()-X"    "270 fBodyAcc-std()-Y"    "271 fBodyAcc-std()-Z"    
- "424 fBodyGyro-mean()-X"  "425 fBodyGyro-mean()-Y"  "426 fBodyGyro-mean()-Z"  
- "427 fBodyGyro-std()-X"   "428 fBodyGyro-std()-Y"   "429 fBodyGyro-std()-Z" 
-
+* "1 tBodyAcc-mean()-X" "2 tBodyAcc-mean()-Y" "3 tBodyAcc-mean()-Z" "4 tBodyAcc-std()-X" "5 tBodyAcc-std()-Y" "6 tBodyAcc-std()-Z"      
+* "41 tGravityAcc-mean()-X" "42 tGravityAcc-mean()-Y" "43 tGravityAcc-mean()-Z" "44 tGravityAcc-std()-X" "45 tGravityAcc-std()-Y" "46 tGravityAcc-std()-Z"  
+* "121 tBodyGyro-mean()-X" "122 tBodyGyro-mean()-Y" "123 tBodyGyro-mean()-Z" "124 tBodyGyro-std()-X" "125 tBodyGyro-std()-Y" "126 tBodyGyro-std()-Z"   
+* "266 fBodyAcc-mean()-X" "267 fBodyAcc-mean()-Y" "268 fBodyAcc-mean()-Z" "269 fBodyAcc-std()-X" "270 fBodyAcc-std()-Y" "271 fBodyAcc-std()-Z"    
+* "424 fBodyGyro-mean()-X" "425 fBodyGyro-mean()-Y" "426 fBodyGyro-mean()-Z" "427 fBodyGyro-std()-X" "428 fBodyGyro-std()-Y" "429 fBodyGyro-std()-Z" 
 
 All of the coded column names were renamed with meaningul titles without code.
 
@@ -51,7 +45,6 @@ All of the coded column names were renamed with meaningul titles without code.
 ###Reproducibility
 
 All analyses performed in this manuscript are reproduced in an R markdown file [12]. To reproduce exactly what was performed in this data analysis, the same data set that was published in December 2012 must be used [4].
-
 
 ###References
 

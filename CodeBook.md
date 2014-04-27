@@ -1,9 +1,17 @@
 #Getting and Cleaning Samsung Data:  Code Book
 
 
-
 ###This is a code book that describes the variables, the data, and any transformations or work that I performed to clean up the data
 
+
+##Reproducibility
+
+All tranformations performed in this data cleanup process originated in an R Project titled run_analysis.Rproj, which was reproduced in a series of R markdown files [12]. To reproduce exactly what was performed in this data cleanup, the same data set that was published in December 2012 must be used [4]. The following markdown files are included in this Samsung-Tidy-Data repository. They are separated into chunks for convenience at accessing the code to investigate a specific sub-process in the data cleanup. The manuscripts are intended to be followed in the following order (see detailed information below):
+
+* 1. 1OrganizingData
+* 2. 2CompilingData
+* 3. 3TrimmingData
+* 4. 4ReshapingData
 
 ##Introduction
 
@@ -42,14 +50,6 @@ All of the coded column names were renamed with meaningul titles without code.
 * "Frequency Body Gyroscope X/Y/Z Mean"
   "Frequency Body Gyroscope X/Y/Z Standard Deviation"
 
-##Reproducibility
-
-All tranformations performed in this data cleanup process are reproduced in a series of R markdown files [12]. To reproduce exactly what was performed in this data cleanup, the same data set that was published in December 2012 must be used [4]. The following markdown files are included in this Samsung-Tidy-Data repository. They are separated into chunks for convenience at accessing the code to investigate a specific sub-process in the data cleanup. The manuscripts are intended to be followed in the following order (see detailed information below):
-
-* 1. 1OrganizingData
-* 2. 2CompilingData
-* 3. 3TrimmingData
-* 4. 4ReshapingData
 
 ##References
 

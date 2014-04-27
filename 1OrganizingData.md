@@ -1,4 +1,4 @@
-####This 1OrganizingData markdown file is intended to be the first in a series of four manuscripts describing the process for data cleanup. 
+####This 1OrganizingData markdown file is intended to be the first in a series of four manuscripts describing the process for data cleanup, all contained in the R Project run_analysis.Rproj. 
 
 * 1. 1OrganizingData
 * 2. 2CompilingData

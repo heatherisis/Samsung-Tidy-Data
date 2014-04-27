@@ -1,4 +1,4 @@
-####This 3ReshapingData markdown file is intended to be the third in a series of four manuscripts describing the process for data cleanup. These instructions can only be followed after those from 1OrganizingData and 2CompilingData have been successfully completed
+####This 3ReshapingData markdown file is intended to be the third in a series of four manuscripts describing the process for data cleanup. These instructions can only be followed after those from 1OrganizingData and 2CompilingData have been successfully completed, all contained in the R Project run_analysis.Rproj.
 
 * 1. 1OrganizingData
 * 2. 2CompilingData

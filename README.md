@@ -1,6 +1,6 @@
 #Getting and Cleaning Samsung Data: README
 
-The following markdown files are included in this Samsung-Tidy-Data repository. They are separated into chunks for convenience at accessing the code to investigate a specific sub-process in the data cleanup. The manuscripts are intended to be followed in the following order (see detailed information below):
+In addition to the raw code in run_analysis.Rproj, the following markdown files are included in this Samsung-Tidy-Data repository. They are separated into chunks for convenience at accessing the code to investigate a specific sub-process in the data cleanup. The manuscripts are intended to be followed in the following order (see detailed information below):
 
 * 1. 1OrganizingData
 * 2. 2CompilingData
